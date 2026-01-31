@@ -8,7 +8,7 @@ st.set_page_config(page_title="Technical Resolution Assistant", page_icon="🛡�
 
 # SECURITY: Retrieve API Key from Streamlit Secrets
 try:
-    GROQ_API_KEY = st.secrets["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"]
+    GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
 except:
     st.error("⚠️ API Key missing! Please set GROQ_API_KEY in Streamlit Secrets.")
     st.stop()
@@ -113,4 +113,5 @@ if st.button("🔍 Find Live Solution", type="primary"):
                 st.button("🚫 Report as Risky")
         else:
             st.error("Could not classify solution.")
+
             st.write(ai_response)
